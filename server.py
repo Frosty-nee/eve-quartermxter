@@ -9,4 +9,4 @@ import flask
 from flask import request, session
 
 import config
-import db
+#import db

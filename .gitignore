@@ -1,4 +1,8 @@
 venv/
+python_client/
+swagger_client
 
 *.sqlite
 *.pyc
+
+*.yaml
