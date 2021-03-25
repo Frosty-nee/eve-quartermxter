@@ -12,8 +12,12 @@ def write():
     with open('config.yaml', 'w') as f:
         dump(config, f)
 
+def update_from_file():
+    for k,v in read().items():
+        globals()[k] = v
 
-config = read()
+update_from_file()
+
 
 if __name__ == '__main__':
     pass
