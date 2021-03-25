@@ -3,12 +3,17 @@ from yaml import safe_load as load
 
 
 
-def read_config():
+def read():
     with open('config.yaml', 'r') as f:
         return load(f)
 
 
-def write_config(c):
+def write():
     with open('config.yaml', 'w') as f:
-        dump(c, f)
+        dump(config, f)
 
+
+config = read()
+
+if __name__ == '__main__':
+    pass
