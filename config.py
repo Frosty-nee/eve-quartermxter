@@ -9,17 +9,14 @@ def read():
 
 def write():
     with open('config.yaml', 'w') as f:
-        dump({
-            'app_secret_key': app_secret_key,
-            'esi_client_id': esi_client_id,
-            'esi_secret_key': esi_secret_key,
-            'testing': testing,
-            }, f)
-
+        d = {opt: globals()[opt] for opt in options}
+        dump(d, f)
 
 def update_from_file():
-    for k,v in read().items():
+    r = read()
+    for k,v in r.items():
         globals()[k] = v
+    globals()['options'] = r.keys()
 
 
 update_from_file()
