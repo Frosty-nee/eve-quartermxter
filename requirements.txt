@@ -7,3 +7,5 @@ urllib3 >= 1.15.1
 pyyaml
 eventlet
 requests
+sqlalchemy
+authlib

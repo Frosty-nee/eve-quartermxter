@@ -11,8 +11,8 @@ import flask
 from flask import request, session
 
 import requests
-import urllib
 from base64 import urlsafe_b64encode, urlsafe_b64decode as b64encode, b64decode
+import urllib
 
 import json
 from authlib.jose import jwt
@@ -72,12 +72,12 @@ def login_callback():
             headers=headers)
 
     data = json.loads(r.text)
-    jwt_key = requests.get('https://login.eveonline/oauth/jwks')
+    print(data)
+    jwt_key = requests.get('https://login.eveonline.com/oauth/jwks')
     jwt_key = jwt_key.text
 
-    session['user'] = jwt.decode(data, jwt_key)
+    session['user'] = jwt.decode(data['access_token'], jwt_key)
 
-    return
     return flask.redirect('/')
 
 @app.route('/logout')
