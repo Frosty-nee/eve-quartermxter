@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title>Quartermxter</title>
+	<link rel='stylesheet' type='text/css' href='/static/css/style.css'/>
+	{% block css %}
+	{% endblock css %}
+	<link rel='shortcut icon' href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+	<body>
+		<div class='wrapper'>
+			<div class='topbar'>
+				<div class='title'>
+					<a href='/'>Home</a>
+					<a href='/login'>Login</a>
+				</div>
+				<div class='nav'>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

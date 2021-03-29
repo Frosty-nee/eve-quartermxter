@@ -1,3 +1,6 @@
-secret_key: ESI app secret key goes here
-client_id: ESI app client id goes here
-
+app_secret_key: 'os.urandom(32) or whatever'
+esi_client_id: 'get this from your app developer page'
+esi_secret_key: 'get this from your app developer page'
+debug: true
+web_host: 'the address you're hosting at'
+port: 'the port you're listening on'

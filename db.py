@@ -3,9 +3,15 @@
 import sqlite3
 
 
-conn = sqlite3.connect('sde.sqlite')
-curs = conn.cursor()
+sde_conn = sqlite3.connect('sde.sqlite')
+scurs = sde_conn.cursor()
+
+data_conn = sqlite3.connect('data.sqlite')
+dcurs = data_conn.cursor()
+
+def get_typename_by_id(id):
+    curs.execute('''SELECT typeName from invTypes where typeID = ?''', (id,))
+    return curs.fetchone()
 
 if __name__ == "__main__":
-	curs.execute('''SELECT * from invTypes where typeID < 1000''')
-	print(curs.fetchone())
+    pass
